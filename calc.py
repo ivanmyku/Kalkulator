@@ -16,23 +16,23 @@ def chose_cell(filepath, quarter, cell, user_input):
     except ValueError:
         st.warning('Please enter and numeric value')
     wb.save(filepath)
-    st.info(f'Stan wydatków na jedzenie w {now.strftime("%B")} wynosi {ws[cell].value}', icon="ℹ️")
+    st.info(f'Stan wydatków na jedzenie w {current_time.strftime("%B")} wynosi {ws[cell].value}', icon="ℹ️")
 
 
 # load in your workbook
 FilePath = r'D:\Finanse\Finansy zycia.xlsx'
-now = datetime.date.today()
+current_time = datetime.date.today()
 st.title("Kalkulator wydatków na jedzenie")
 
 inp = st.text_input(label="Input", placeholder="Dodaj nowy paragon...",
                     key='receipt')
 
-if inp is not '':
+if inp != '':
     st.error("Czy na pewno chcesz wprowadzić paragon?")
     if st.button("Nie"):
         exit()
     elif st.button("Tak"):
-        match now.strftime('%B'):
+        match current_time.strftime('%B'):
             case "November":
                 chose_cell(FilePath, 'Wydatki', 'B1', inp)
             case "December":
