@@ -3,8 +3,6 @@ import streamlit as st
 from openpyxl import Workbook, load_workbook
 import inquirer
 import datetime
-
-
 def chose_cell(filepath, quarter, cell, user_input):
     wb = load_workbook(filepath)
     ws = wb[quarter]
@@ -18,10 +16,6 @@ def chose_cell(filepath, quarter, cell, user_input):
         st.warning('Please enter and numeric value')
     wb.save(filepath)
     st.info(f'Stan wydatków na jedzenie w {now.strftime("%B")} wynosi {ws[cell].value}', icon="ℹ️")
-
-def submit():
-    st.session_state.my_text = st.session_state.receipt
-    st.session_state.receipt = ""
 
 # load in your workbook
 FilePath = r'D:\Finanse\Finansy zycia.xlsx'
