@@ -32,30 +32,29 @@ if inp != '':
     if st.button("Nie"):
         exit()
     elif st.button("Tak"):
-        match current_time.strftime('%B'):
-            case "November":
-                chose_cell(FilePath, 'Wydatki', 'B1', inp)
-            case "December":
-                chose_cell(FilePath, 'Wydatki', 'B2', inp)
-            case "January":
-                chose_cell(FilePath, 'Wydatki', 'B3', inp)
-            case "February":
-                chose_cell(FilePath, 'Wydatki', 'B4', inp)
-            case "March":
-                chose_cell(FilePath, 'Wydatki', 'B5', inp)
-            case "April":
-                chose_cell(FilePath, 'Wydatki', 'B6', inp)
-            case "May":
-                chose_cell(FilePath, 'Wydatki', 'B7', inp)
-            case "June":
-                chose_cell(FilePath, 'Wydatki', 'B8', inp)
-            case "July":
-                chose_cell(FilePath, 'Wydatki', 'B9', inp)
-            case "August":
-                chose_cell(FilePath, 'Wydatki', 'B10', inp)
-            case "September":
-                chose_cell(FilePath, 'Wydatki', 'B11', inp)
-            case "October":
-                chose_cell(FilePath, 'Wydatki', 'B12', inp)
+        if current_time.strftime('%B') is 'November':
+            chose_cell(FilePath, 'Wydatki', 'B1', inp)
+        elif current_time.strftime('%B') is "December":
+            chose_cell(FilePath, 'Wydatki', 'B2', inp)
+        elif current_time.strftime('%B') is "January":
+            chose_cell(FilePath, 'Wydatki', 'B3', inp)
+        elif current_time.strftime('%B') is "February":
+            chose_cell(FilePath, 'Wydatki', 'B4', inp)
+        elif current_time.strftime('%B') is "March":
+            chose_cell(FilePath, 'Wydatki', 'B5', inp)
+        elif current_time.strftime('%B') is "April":
+            chose_cell(FilePath, 'Wydatki', 'B6', inp)
+        elif current_time.strftime('%B') is "May":
+            chose_cell(FilePath, 'Wydatki', 'B7', inp)
+        elif current_time.strftime('%B') is "June":
+            chose_cell(FilePath, 'Wydatki', 'B8', inp)
+        elif current_time.strftime('%B') is "July":
+            chose_cell(FilePath, 'Wydatki', 'B9', inp)
+        elif current_time.strftime('%B') is "August":
+            chose_cell(FilePath, 'Wydatki', 'B10', inp)
+        elif current_time.strftime('%B') is "September":
+            chose_cell(FilePath, 'Wydatki', 'B11', inp)
+        elif current_time.strftime('%B') is "October":
+            chose_cell(FilePath, 'Wydatki', 'B12', inp)
 else:
     exit()
