@@ -1,8 +1,9 @@
 # install OpenPyXl,streamlit
 import streamlit as st
-from openpyxl import Workbook, load_workbook
-import inquirer
+from openpyxl import load_workbook
 import datetime
+
+
 def chose_cell(filepath, quarter, cell, user_input):
     wb = load_workbook(filepath)
     ws = wb[quarter]
@@ -17,13 +18,14 @@ def chose_cell(filepath, quarter, cell, user_input):
     wb.save(filepath)
     st.info(f'Stan wydatków na jedzenie w {now.strftime("%B")} wynosi {ws[cell].value}', icon="ℹ️")
 
+
 # load in your workbook
 FilePath = r'D:\Finanse\Finansy zycia.xlsx'
 now = datetime.date.today()
 st.title("Kalkulator wydatków na jedzenie")
 
 inp = st.text_input(label="Input", placeholder="Dodaj nowy paragon...",
-                      key='receipt')
+                    key='receipt')
 
 if inp is not '':
     st.error("Czy na pewno chcesz wprowadzić paragon?")
@@ -57,4 +59,3 @@ if inp is not '':
                 chose_cell(FilePath, 'Wydatki', 'B12', inp)
 else:
     exit()
-
